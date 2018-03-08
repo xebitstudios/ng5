@@ -1,16 +1,5 @@
-<ul>
-  <li><a routerLink="">Home</a></li>
-  <li><a routerLink="about/4">About</a></li>
-</ul>
-
-<!-- <app-home></app-home> -->
-
-<router-outlet></router-outlet>
-
-<!-- <div class="container">
-  <h3>Template-driven form example</h3>
-  <form01></form01>
-  <br/>
-  <h3>Reactive form example</h3>
-  <form02></form02>
-</div> -->
+<app-navigation [title]='title'></app-navigation>
+<div class="routerContainer">
+    <router-outlet></router-outlet>
+</div>
+<app-footer class="footer" [title]='title' [year]='year'></app-footer>

@@ -1,0 +1,27 @@
+<div>
+    <br/>
+    <button class="btn btn-default" (click)='getMyData()'>Fetch Data</button>
+    <br/><br/>
+    <h4>Employees</h4>
+    <div>
+      <table class="table table-hover">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Phone</th>
+          <th>Salary</th>
+        </tr>
+        <tr *ngFor='let employee of employees'>
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.phone }}</td>
+          <td>{{ employee.salary }}</td>
+        </tr>
+      </table>
+    </div>
+    <hr><br/>
+    <app-todo></app-todo>
+  </div>
+  

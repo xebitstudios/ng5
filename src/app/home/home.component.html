@@ -17,4 +17,10 @@
   <div class="col">
     <p class="life-container" *ngFor="let goal of goals; let i = index" (click)="removeItem(i)"> {{ goal }}</p>
   </div>
+
+  <div class="container color-light">
+    <div class="col">
+      <p class="life-container" *ngFor="let user of data"> {{ user.name }} {{user.website}}</p>
+    </div>
+  </div>
 </div>

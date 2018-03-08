@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
-import { DataService } from '../data.service';
+import { DataService } from '../shared/data.service';
+import { Observable } from 'rxjs/Observable';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-home',
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit {
   btnText = 'Add an item';
   goalText = 'My first life goal';
   goals = [];
+  data$: Observable<Array<User>>;
 
   constructor(private _data: DataService) { }
 
@@ -53,6 +56,10 @@ export class HomeComponent implements OnInit {
   removeItem(i) {
     this.goals.splice(i, 1);
     this._data.changeGoal(this.goals);
+  }
+
+  getMyData(): void {
+    this.data$ = this._data.getData();
   }
 
 }
